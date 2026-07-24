@@ -1,13 +1,18 @@
 name: test-work
 on: workflow_dispatch
 jobs:
-  job-1:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: system-info
-        run: |
-          echo " this is first line"
-          echo " this is second line"
-          date
-          hostname
-          free -m
+      - name: build_step
+        run: echo " running build "
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test_step
+        run:  echo " running test "
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy_step
+        run: echo " application deploy "

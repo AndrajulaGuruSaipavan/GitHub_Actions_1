@@ -1,18 +1,12 @@
-name: test-work
+name: System Information
 on: workflow_dispatch
 jobs:
-  build:
+  info:
     runs-on: ubuntu-latest
     steps:
-      - name: build_step
-        run: echo " running build "
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test_step
-        run:  echo " running test "
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy_step
-        run: echo " application deploy "
+      - name: Print System Info
+        run: |
+          date
+          hostname
+          whoami
+          pwd

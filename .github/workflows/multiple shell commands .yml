@@ -1,13 +1,20 @@
-name: Workflow Push
-on: push
+name: Student Practice
+on: workflow_dispatch
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Info
-        run: |
-          pwd
-          ls -la
-          date
-          free -m
+      - run: echo " Building... "
+      - run: date
+  Test:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Testing... "
+      - run: free -m
+  Deploy:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Deploying... "
+      - run: df -h

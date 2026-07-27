@@ -1,9 +1,12 @@
 name: Practice Workflow
 on: workflow_dispatch
-env:
-  COMPANY: OpenAI
 jobs:
-  Printing:
+  Checkout:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " $COMPANY "
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Current Folder
+        run: pwd
+      - name: Show Files
+        run: ls -la

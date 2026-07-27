@@ -1,12 +1,9 @@
 name: Practice Workflow
 on: workflow_dispatch
+env:
+  COMPANY: OpenAI
 jobs:
-  build:
+  Printing:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " Building Application "
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo " Testing Application "
+      - run: echo " $COMPANY "

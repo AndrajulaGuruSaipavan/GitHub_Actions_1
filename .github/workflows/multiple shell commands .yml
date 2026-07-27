@@ -1,11 +1,10 @@
-name: System Information push
-on: push
+name: Practice Workflow
+on: workflow_dispatch
 jobs:
-  info:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: system-info
-        run: |
-          echo " Hello DevOps "
+      - run: |
+          echo " Welcome "
           free -m
-          date
+          lscpu

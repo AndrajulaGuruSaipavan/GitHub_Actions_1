@@ -1,17 +1,11 @@
 name: Practice Workflow
-on: workflow_dispatch
+on:
+  push: 
+    branches:
+      - main
+      - develop
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " Build is running...... "
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo " Test is running....... "
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo " Deploying application "
+      - run: echo " workflow started "

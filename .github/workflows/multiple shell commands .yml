@@ -6,5 +6,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Show Current Folder
+        run: pwd
+      - name: Show Files
+        run: ls -la
       - name: Print README file
         run: cat README.md

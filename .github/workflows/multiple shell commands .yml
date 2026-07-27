@@ -1,12 +1,17 @@
 name: Practice Workflow
 on: workflow_dispatch
 jobs:
-  Checkout:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Current Folder
-        run: pwd
-      - name: Show Files
-        run: ls -la
+      - run: echo " Build is running...... "
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Test is running....... "
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Deploying application "

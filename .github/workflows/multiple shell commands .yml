@@ -4,7 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo " Welcome "
-          free -m
-          lscpu
+      - run: echo " Building Application "
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Testing Application "

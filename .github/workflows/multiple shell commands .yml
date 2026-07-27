@@ -1,11 +1,10 @@
-name: Practice Workflow
-on:
-  push: 
-    branches:
-      - main
-      - develop
+name: Print Readme file
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " workflow started "
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Print README file
+        run: cat README.md

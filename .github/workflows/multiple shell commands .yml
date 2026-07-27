@@ -4,12 +4,8 @@ jobs:
   info:
     runs-on: ubuntu-latest
     steps:
-      - name: Print System Info
+      - name: system-info
         run: |
-          date
-          hostname
-          whoami
-          pwd
           echo " Hello DevOps "
-          echo " Disk Usage "
-          
+          free -m
+          date

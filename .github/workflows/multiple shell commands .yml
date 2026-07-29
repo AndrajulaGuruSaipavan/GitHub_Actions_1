@@ -1,20 +1,10 @@
-name: Student Practice
-on: workflow_dispatch
+name: test-env
+on: push
+env:
+  APP_ENV: " dev "
 jobs:
-  Build:
+  test-env:
     runs-on: ubuntu-latest
     steps:
-      - run: echo " Building... "
-      - run: date
-  Test:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo " Testing... "
-      - run: free -m
-  Deploy:
-    needs: Test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo " Deploying... "
-      - run: df -h
+      - name: connecting to env
+        run: echo " app connection to $APP_ENV "
